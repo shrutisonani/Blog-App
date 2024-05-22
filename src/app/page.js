@@ -18,12 +18,10 @@ const fetchBlog = async (params) => {
 
 const Blog = async () => {
   const blogs = await fetchBlog("&filters[isFeatured][$eq]=true");
-  // console.log(blogs.data);
   const firstBlog = blogs.data[0];
-  // console.log("single blog", firstBlog);
-  // const otherBlog = blogs.data.shift();
-  // console.log("hello", otherBlog);
-  // console.log(blogs.data);
+  blogs.data.shift();
+
+  console.log(blogs.data);
   return (
     <div className="container pb-80">
       <Card
