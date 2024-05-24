@@ -1,23 +1,10 @@
 import Card from "@/components/card/card";
 import config from "@/config";
-
-const fetchBlog = async (params) => {
-  const reqOption = {
-    headers: {
-      Authorization: `Bearer ${process.env.API_TOKEN}`,
-    },
-  };
-  const request = await fetch(
-    `${config.api}/api/blogs?populate=*${params}`,
-    reqOption
-  );
-  const response = await request.json();
-
-  return response;
-};
+import fetchBlog from "@/components/helpers/fetch-blog";
 
 const Blog = async () => {
   const blogs = await fetchBlog("&filters[isFeatured][$eq]=true");
+  if (blogs.data.length == 0) return null;
   const firstBlog = blogs.data[0];
   blogs.data.shift();
   return (
