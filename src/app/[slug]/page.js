@@ -4,7 +4,7 @@ const BlogDetails = () => (
   <div className="container pb-80">
     <div className="row mb-50">
       <div className="col col_9">
-        <div className={`h6 mb-20 c-orange`}>Product Review</div>
+        <div className={`h6 mb-20 c-orange`}>Product Reviews</div>
         <h2>How to add featured images in wordpress </h2>
       </div>
     </div>

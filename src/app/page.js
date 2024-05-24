@@ -20,8 +20,6 @@ const Blog = async () => {
   const blogs = await fetchBlog("&filters[isFeatured][$eq]=true");
   const firstBlog = blogs.data[0];
   blogs.data.shift();
-
-  console.log(blogs.data);
   return (
     <div className="container pb-80">
       <Card
